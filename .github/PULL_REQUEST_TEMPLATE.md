@@ -2,7 +2,7 @@
 
 <!-- What changed? Keep this concrete and narrow. -->
 
-- 
+- <!-- Summary item -->
 
 ## Content Impact
 
@@ -13,11 +13,11 @@
 - [ ] Science fragments remain 6 sentences or fewer.
 - [ ] Art fragments remain image-only or 3 sentences or fewer.
 
-## Design Or Behavior Impact
+## Design or Behavior Impact
 
 <!-- Note layout, typography, spacing, performance, deployment, or accessibility effects. -->
 
-- 
+- <!-- Design or behavior note -->
 
 ## Checks
 
