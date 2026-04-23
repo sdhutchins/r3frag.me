@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Project README
+    url: "https://github.com/sdhutchins/r3frag.me#readme"
+    about: Read the project readme before opening an issue.

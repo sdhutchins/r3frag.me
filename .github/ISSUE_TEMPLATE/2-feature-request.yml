@@ -1,0 +1,56 @@
+name: Feature Request
+description: Suggest a restrained improvement to the archive
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: change
+    attributes:
+      label: Requested Change
+      description: Describe the change in concrete terms.
+      placeholder: What should be added, removed, or refined?
+    validations:
+      required: true
+
+  - type: textarea
+    id: clarity
+    attributes:
+      label: Clarity Gained
+      description: Explain why this belongs in a minimal static archive.
+      placeholder: What does this make clearer, more durable, or more precise?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Shape
+      description: Describe the smallest useful implementation.
+      placeholder: How could this be done without expanding architecture or visual noise?
+    validations:
+      required: false
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints And Non-Goals
+      description: Note what this should not become.
+      placeholder: No UI framework, backend, CMS behavior, pagination, social features, or decorative system.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Choose the closest area.
+      options:
+        - Content model
+        - Layout
+        - Typography or color
+        - Image handling
+        - Validation
+        - Deployment
+        - Documentation
+    validations:
+      required: true

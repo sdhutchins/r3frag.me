@@ -1,0 +1,31 @@
+name: Question
+description: Ask a focused question about the archive
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: Ask the question directly.
+      placeholder: What do you need to clarify?
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Include the relevant content, file, design, or deployment context.
+      placeholder: What should the maintainer know before answering?
+    validations:
+      required: false
+
+  - type: input
+    id: related-file
+    attributes:
+      label: Related File
+      description: Optional path to the relevant file.
+      placeholder: src/lib/fragments.js
+    validations:
+      required: false
