@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Muted botanical field note</title>
+  <desc id="desc">Soft overlapping botanical forms in warm beige, olive, and berry tones.</desc>
+  <rect width="1200" height="1500" fill="#efe4d8"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M282 1228C422 934 512 632 548 264" stroke="#776d4f" stroke-width="18" opacity=".52"/>
+    <path d="M548 266C706 506 794 782 818 1194" stroke="#423b2b" stroke-width="12" opacity=".42"/>
+    <path d="M390 706C254 648 162 536 126 398c144 8 266 74 346 190" stroke="#776d4f" stroke-width="10" opacity=".46"/>
+    <path d="M610 584c154-102 304-132 448-90-82 130-212 204-390 224" stroke="#776d4f" stroke-width="10" opacity=".42"/>
+    <path d="M476 1016c-156-42-278-134-366-276 166-14 308 38 426 156" stroke="#423b2b" stroke-width="10" opacity=".32"/>
+    <path d="M704 980c130-138 264-210 402-216-36 152-140 262-314 330" stroke="#423b2b" stroke-width="10" opacity=".34"/>
+  </g>
+  <g opacity=".84">
+    <ellipse cx="600" cy="372" rx="146" ry="96" fill="#c18f96"/>
+    <ellipse cx="600" cy="372" rx="76" ry="44" fill="#884b43" opacity=".58"/>
+    <ellipse cx="600" cy="372" rx="28" ry="18" fill="#6c1e26" opacity=".7"/>
+  </g>
+  <g opacity=".74">
+    <ellipse cx="374" cy="730" rx="118" ry="74" fill="#c5a98f"/>
+    <ellipse cx="806" cy="678" rx="142" ry="82" fill="#c18f96"/>
+    <ellipse cx="544" cy="1034" rx="128" ry="78" fill="#966659"/>
+    <ellipse cx="806" cy="1046" rx="108" ry="66" fill="#c5a98f"/>
+  </g>
+  <g fill="#1e0708" opacity=".12">
+    <circle cx="194" cy="230" r="6"/>
+    <circle cx="974" cy="322" r="5"/>
+    <circle cx="1012" cy="1196" r="7"/>
+    <circle cx="214" cy="1116" r="5"/>
+  </g>
+</svg>

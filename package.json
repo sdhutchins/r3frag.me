@@ -1,0 +1,17 @@
+{
+  "name": "r3frag-me",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "node tests/validate-fragments.js && astro build",
+    "test:lint": "node tests/validate-fragments.js"
+  },
+  "devDependencies": {
+    "astro": "6.1.9"
+  }
+}

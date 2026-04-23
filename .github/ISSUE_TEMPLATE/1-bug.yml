@@ -1,0 +1,81 @@
+name: Bug Report
+description: Report a problem with the static archive
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected Area
+      description: Choose the area that best describes the problem.
+      options:
+        - Content rendering
+        - Fragment validation
+        - Layout or typography
+        - Image handling
+        - Build or deployment
+        - Documentation
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the bug clearly and specifically.
+      placeholder: What is broken, missing, or behaving unexpectedly?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps To Reproduce
+      description: Include the smallest sequence that reproduces the behavior.
+      placeholder: |
+        1. Run `npm install`
+        2. Run `npm test`
+        3. Open the affected page or fragment
+        4. Observe the failure
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should have happened instead?
+      placeholder: Describe the expected archive, content, layout, or build behavior.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What happened?
+      placeholder: Include error output, screenshots, or rendered behavior when useful.
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include details only if they affect reproduction.
+      placeholder: |
+        - OS:
+        - Node version:
+        - npm version:
+        - Browser:
+    validations:
+      required: false
+
+  - type: input
+    id: related-file
+    attributes:
+      label: Related File
+      description: Optional path to the fragment, component, style, or workflow involved.
+      placeholder: src/content/fragments/example.md
+    validations:
+      required: false

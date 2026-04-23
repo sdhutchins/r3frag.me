@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+
+const dateFormatter = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+
+const { fragment, position = 0 } = Astro.props;
+const FragmentContent = fragment.Content;
+const formattedDate = dateFormatter.format(fragment.dateValue);
+---
+
+<article
+  class:list={['fragment', `fragment--${fragment.mode}`, fragment.image && 'fragment--with-image']}
+  style={`--fragment-order: ${position};`}
+>
+  <header class="fragment__header">
+    <span class="fragment__mode">{fragment.mode}</span>
+    <time class="fragment__date" datetime={fragment.date}>{formattedDate}</time>
+  </header>
+
+  {fragment.title && <h2 class="fragment__title">{fragment.title}</h2>}
+
+  {fragment.image && (
+    <figure class="fragment__figure">
+      <Image
+        src={fragment.image.src}
+        alt={fragment.image.alt}
+        sizes="(max-width: 719px) 100vw, (max-width: 1079px) 50vw, 33vw"
+        widths={[480, 960, 1440]}
+      />
+    </figure>
+  )}
+
+  <div class="fragment__body">
+    <FragmentContent />
+  </div>
+
+  {fragment.origin && (
+    <p class="fragment__origin">
+      {fragment.originHref ? (
+        <a class="fragment__origin-link" href={fragment.originHref}>{fragment.origin}</a>
+      ) : (
+        fragment.origin
+      )}
+    </p>
+  )}
+</article>
