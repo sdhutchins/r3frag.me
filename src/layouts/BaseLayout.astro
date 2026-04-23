@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+
+const {
+  title = 'r3frag',
+  description = 'A living archive of science and art fragments.',
+} = Astro.props;
+
+const pathname = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Primary">
+        <div class="site-nav__inner">
+          <a
+            href="/"
+            class:list={['site-nav__link', 'site-nav__brand', pathname === '/' && 'is-active']}
+            aria-current={pathname === '/' ? 'page' : undefined}
+          >
+            r3frag
+          </a>
+
+          <div class="site-nav__links">
+            <a
+              href="/science"
+              class:list={['site-nav__link', pathname === '/science' && 'is-active']}
+              aria-current={pathname === '/science' ? 'page' : undefined}
+            >
+              Science
+            </a>
+            <a
+              href="/art"
+              class:list={['site-nav__link', pathname === '/art' && 'is-active']}
+              aria-current={pathname === '/art' ? 'page' : undefined}
+            >
+              Art
+            </a>
+            <a
+              href="/about"
+              class:list={['site-nav__link', pathname === '/about' && 'is-active']}
+              aria-current={pathname === '/about' ? 'page' : undefined}
+            >
+              About
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <slot />
+    </main>
+  </body>
+</html>

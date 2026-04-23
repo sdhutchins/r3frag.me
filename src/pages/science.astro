@@ -1,0 +1,15 @@
+---
+import FragmentStream from '../components/FragmentStream.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getFragments } from '../lib/fragments.js';
+
+const fragments = getFragments({ mode: 'science' });
+---
+
+<BaseLayout title="Science | r3frag" description="Science fragments from the r3frag archive.">
+  <FragmentStream
+    fragments={fragments}
+    title="Science"
+    intro="Short fragments for what I’m testing, what I’m questioning, and what follows if it’s true."
+  />
+</BaseLayout>

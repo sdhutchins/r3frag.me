@@ -1,0 +1,75 @@
+---
+import FragmentItem from './FragmentItem.astro';
+
+const {
+  fragments = [],
+  title = '',
+  intro = '',
+  emptyMessage = 'No fragments yet.',
+} = Astro.props;
+
+const masonryColumns = buildMasonryColumns(fragments, 3);
+
+function buildMasonryColumns(items, columnCount) {
+  const columns = Array.from({ length: columnCount }, () => []);
+  const columnWeights = Array.from({ length: columnCount }, () => 0);
+
+  items.forEach((fragment, position) => {
+    const columnIndex = position < columnCount ? position : findLightestColumn(columnWeights);
+
+    columns[columnIndex].push({ fragment, position });
+    columnWeights[columnIndex] += estimateFragmentWeight(fragment);
+  });
+
+  return columns;
+}
+
+function findLightestColumn(columnWeights) {
+  return columnWeights.indexOf(Math.min(...columnWeights));
+}
+
+function estimateFragmentWeight(fragment) {
+  let weight = 1 + fragment.textLength / 180;
+
+  if (fragment.title) {
+    weight += 0.55;
+  }
+
+  if (fragment.origin) {
+    weight += 0.25;
+  }
+
+  if (fragment.image) {
+    weight += 2.2;
+  }
+
+  if (fragment.mode === 'art') {
+    weight += 0.35;
+  }
+
+  return weight;
+}
+---
+
+<section class="stream">
+  {(title || intro) && (
+    <header class="page-intro">
+      {title && <h1 class="page-intro__title">{title}</h1>}
+      {intro && <p class="page-intro__text">{intro}</p>}
+    </header>
+  )}
+
+  {fragments.length > 0 ? (
+    <div class="stream__masonry">
+      {masonryColumns.map((column) => (
+        <div class="stream__column">
+          {column.map(({ fragment, position }) => (
+            <FragmentItem fragment={fragment} position={position} />
+          ))}
+        </div>
+      ))}
+    </div>
+  ) : (
+    <p class="stream__empty">{emptyMessage}</p>
+  )}
+</section>
