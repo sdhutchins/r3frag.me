@@ -1,19 +1,18 @@
 ---
 import FragmentStream from '../components/FragmentStream.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import pages from '../data/pages.json';
 import { getFragments } from '../lib/fragments.js';
 
 const fragments = getFragments();
-const byline = `r3frag is a static archive of fragments.
-An ongoing refragmenting of a life expressed through science and art.`;
 ---
 
 <BaseLayout
-  title="r3frag"
-  description="r3frag is a static archive of fragments. An ongoing refragmenting of a life expressed through science and art."
+  title={pages.index.title}
+  description={pages.index.description}
 >
   <FragmentStream
     fragments={fragments}
-    intro={byline}
+    intro={pages.index.byline}
   />
 </BaseLayout>

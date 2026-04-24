@@ -1,15 +1,20 @@
 ---
 import FragmentStream from '../components/FragmentStream.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import pages from '../data/pages.json';
+import siteData from '../data/site.json';
 import { getFragments } from '../lib/fragments.js';
 
 const fragments = getFragments({ mode: 'art' });
 ---
 
-<BaseLayout title="Art | r3frag" description="Art fragments from the r3frag archive.">
+<BaseLayout
+  title={`${pages.art.title} | ${siteData.siteDefaults.title}`}
+  description={pages.art.description}
+>
   <FragmentStream
     fragments={fragments}
-    title="Art"
-    intro="Images and brief captions kept in the same chronological language as the archive."
+    title={pages.art.title}
+    intro={pages.art.intro}
   />
 </BaseLayout>

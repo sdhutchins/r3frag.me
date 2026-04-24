@@ -1,15 +1,20 @@
 ---
 import FragmentStream from '../components/FragmentStream.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import pages from '../data/pages.json';
+import siteData from '../data/site.json';
 import { getFragments } from '../lib/fragments.js';
 
 const fragments = getFragments({ mode: 'science' });
 ---
 
-<BaseLayout title="Science | r3frag" description="Science fragments from the r3frag archive.">
+<BaseLayout
+  title={`${pages.science.title} | ${siteData.siteDefaults.title}`}
+  description={pages.science.description}
+>
   <FragmentStream
     fragments={fragments}
-    title="Science"
-    intro="Short fragments for what I’m testing, what I’m questioning, and what follows if it’s true."
+    title={pages.science.title}
+    intro={pages.science.intro}
   />
 </BaseLayout>

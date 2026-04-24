@@ -1,0 +1,60 @@
+name: New Fragment
+description: Capture a new fragment and turn it into a pull request
+title: "[Fragment]: "
+labels: ["new-fragment"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: Fragment title
+      placeholder: Porous boundary
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      description: Choose the fragment mode.
+      options:
+        - science
+        - art
+    validations:
+      required: true
+
+  - type: input
+    id: origin
+    attributes:
+      label: Origin
+      description: Source URL or short origin note
+      placeholder: lab notebook, January assay draft
+    validations:
+      required: false
+
+  - type: textarea
+    id: image
+    attributes:
+      label: Image upload
+      description: Drag and drop an image here.
+      placeholder: "![image](https://github.com/user-attachments/assets/...)"
+    validations:
+      required: false
+
+  - type: input
+    id: imageAlt
+    attributes:
+      label: Image alt
+      description: Alt text for the image
+      placeholder: Light stayed on the stems after the wind left.
+    validations:
+      required: false
+
+  - type: textarea
+    id: body
+    attributes:
+      label: Body
+      description: The fragment content in markdown
+      placeholder: Write the fragment here.
+    validations:
+      required: true
