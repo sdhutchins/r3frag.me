@@ -75,8 +75,8 @@ a {
 
 .site-nav__link {
   font-family: var(--nav-font);
-  font-size: 0.82rem;
-  letter-spacing: 0.03em;
+  font-size: 0.9rem;
+  letter-spacing: 0.025em;
   text-decoration: none;
   line-height: 1.2;
 }
@@ -153,14 +153,15 @@ a {
   margin-bottom: 0.7rem;
   color: var(--muted);
   font-family: var(--nav-font);
-  font-size: 0.64rem;
-  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .fragment__mode {
+  font-size: 1.12em;
   font-variant-caps: all-small-caps;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
 }
 
 .fragment__date {
@@ -206,7 +207,7 @@ a {
   max-width: 34ch;
   color: var(--muted);
   font-family: var(--nav-font);
-  font-size: 0.68rem;
+  font-size: 0.76rem;
   letter-spacing: 0.02em;
   line-height: 1.4;
   opacity: 0.78;
@@ -224,13 +225,12 @@ a {
 }
 
 .fragment--science {
-  border-left: 1px solid var(--border);
-  padding-left: 1rem;
+  padding-top: 0.12rem;
 }
 
 .fragment--science .fragment__body {
-  line-height: 1.58;
-  max-width: 32ch;
+  line-height: 1.57;
+  max-width: 31.5ch;
 }
 
 .fragment--science .fragment__mode {
@@ -242,7 +242,7 @@ a {
 }
 
 .fragment--art {
-  padding-top: 0.8rem;
+  padding-top: 0.95rem;
 }
 
 .fragment--with-image .fragment__figure {
@@ -259,7 +259,7 @@ a {
 
 .fragment--art .fragment__body {
   color: var(--muted);
-  line-height: 1.74;
+  line-height: 1.76;
   max-width: 35ch;
 }
 
