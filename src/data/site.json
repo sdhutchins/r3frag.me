@@ -1,0 +1,24 @@
+{
+  "siteDefaults": {
+    "title": "r3frag",
+    "description": "A living archive of science and art fragments."
+  },
+  "navigation": [
+    {
+      "href": "/",
+      "label": "r3frag"
+    },
+    {
+      "href": "/science",
+      "label": "Science"
+    },
+    {
+      "href": "/art",
+      "label": "Art"
+    },
+    {
+      "href": "/about",
+      "label": "About"
+    }
+  ]
+}

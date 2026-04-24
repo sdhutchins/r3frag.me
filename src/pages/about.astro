@@ -1,10 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import pages from '../data/pages.json';
+import siteData from '../data/site.json';
 ---
 
-<BaseLayout title="About | r3frag" description="About the r3frag archive.">
+<BaseLayout
+  title={`${pages.about.title} | ${siteData.siteDefaults.title}`}
+  description={pages.about.description}
+>
   <article class="about">
-    <h1 class="about__title">About</h1>
+    <h1 class="about__title">{pages.about.title}</h1>
     <div class="about__body">
       <p>
         r3frag is a static archive of short scientific and artistic fragments. It holds a single

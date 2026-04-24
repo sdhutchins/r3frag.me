@@ -1,12 +1,14 @@
 ---
 import '../styles/global.css';
+import siteData from '../data/site.json';
 
 const {
-  title = 'r3frag',
-  description = 'A living archive of science and art fragments.',
+  title = siteData.siteDefaults.title,
+  description = siteData.siteDefaults.description,
 } = Astro.props;
 
 const pathname = Astro.url.pathname;
+const [brandLink, ...navLinks] = siteData.navigation;
 ---
 
 <!doctype html>
@@ -22,35 +24,27 @@ const pathname = Astro.url.pathname;
       <nav class="site-nav" aria-label="Primary">
         <div class="site-nav__inner">
           <a
-            href="/"
-            class:list={['site-nav__link', 'site-nav__brand', pathname === '/' && 'is-active']}
-            aria-current={pathname === '/' ? 'page' : undefined}
+            href={brandLink.href}
+            class:list={[
+              'site-nav__link',
+              'site-nav__brand',
+              pathname === brandLink.href && 'is-active',
+            ]}
+            aria-current={pathname === brandLink.href ? 'page' : undefined}
           >
-            r3frag
+            {brandLink.label}
           </a>
 
           <div class="site-nav__links">
-            <a
-              href="/science"
-              class:list={['site-nav__link', pathname === '/science' && 'is-active']}
-              aria-current={pathname === '/science' ? 'page' : undefined}
-            >
-              Science
-            </a>
-            <a
-              href="/art"
-              class:list={['site-nav__link', pathname === '/art' && 'is-active']}
-              aria-current={pathname === '/art' ? 'page' : undefined}
-            >
-              Art
-            </a>
-            <a
-              href="/about"
-              class:list={['site-nav__link', pathname === '/about' && 'is-active']}
-              aria-current={pathname === '/about' ? 'page' : undefined}
-            >
-              About
-            </a>
+            {navLinks.map((link) => (
+              <a
+                href={link.href}
+                class:list={['site-nav__link', pathname === link.href && 'is-active']}
+                aria-current={pathname === link.href ? 'page' : undefined}
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
       </nav>
