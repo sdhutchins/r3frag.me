@@ -9,6 +9,12 @@ const {
 
 const pathname = Astro.url.pathname;
 const [brandLink, ...navLinks] = siteData.navigation;
+
+const activeNavLink = navLinks.find((link) => pathname === link.href);
+
+const brandLabel = activeNavLink
+  ? `${brandLink.label} / ${activeNavLink.label.toLowerCase()}`
+  : brandLink.label;
 ---
 
 <!doctype html>
@@ -32,7 +38,7 @@ const [brandLink, ...navLinks] = siteData.navigation;
             ]}
             aria-current={pathname === brandLink.href ? 'page' : undefined}
           >
-            {brandLink.label}
+            {brandLabel}
           </a>
 
           <div class="site-nav__links">

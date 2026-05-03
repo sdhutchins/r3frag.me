@@ -241,6 +241,23 @@ a {
   max-width: 14ch;
 }
 
+.fragment--thread {
+  padding-top: 0.42rem;
+}
+
+.fragment--thread .fragment__mode {
+  color: var(--muted);
+}
+
+.fragment--thread .fragment__body {
+  line-height: 1.64;
+  max-width: 32.5ch;
+}
+
+.fragment--thread .fragment__title {
+  max-width: 15.5ch;
+}
+
 .fragment--art {
   padding-top: 0.95rem;
 }

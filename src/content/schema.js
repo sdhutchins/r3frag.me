@@ -14,7 +14,7 @@ const isoDateField = z
 export const fragmentFrontmatterSchema = z.object({
   title: z.string().trim().optional(),
   date: isoDateField,
-  mode: z.enum(['science', 'art']),
+  mode: z.enum(['science', 'art', 'thread']),
   origin: shortSingleLine.optional(),
   image: z.string().trim().optional(),
   imageAlt: z.string().trim().optional(),

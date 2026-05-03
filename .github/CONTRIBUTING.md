@@ -23,9 +23,10 @@ npm test
 
 - Put fragments in `src/content/fragments/`.
 - Use Markdown with `date` and `mode` frontmatter.
-- Set `mode` to `science` or `art`.
+- Set `mode` to `science`, `art`, or `thread`.
 - Keep science fragments to 6 sentences or fewer.
 - Keep art fragments image-only or 3 sentences or fewer.
+- Keep thread fragments to 5 sentences or fewer.
 - Put image assets in `src/assets/fragments/` and provide useful `imageAlt` text when an image needs context.
 
 ## Change Scope

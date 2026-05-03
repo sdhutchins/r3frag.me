@@ -1,12 +1,12 @@
 {
   "siteDefaults": {
-    "title": "r3frag",
-    "description": "A living archive of science and art fragments."
+    "title": "r3frag.me",
+    "description": "A living archive of science, art, and thread fragments."
   },
   "navigation": [
     {
       "href": "/",
-      "label": "r3frag"
+      "label": "r3frag.me"
     },
     {
       "href": "/science",
@@ -15,6 +15,10 @@
     {
       "href": "/art",
       "label": "Art"
+    },
+    {
+      "href": "/thread",
+      "label": "Thread"
     },
     {
       "href": "/about",

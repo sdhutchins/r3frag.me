@@ -1,0 +1,20 @@
+---
+import FragmentStream from '../components/FragmentStream.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import pages from '../data/pages.json';
+import siteData from '../data/site.json';
+import { getFragments } from '../lib/fragments.js';
+
+const fragments = getFragments({ mode: 'thread' });
+---
+
+<BaseLayout
+  title={`${pages.thread.title} | ${siteData.siteDefaults.title}`}
+  description={pages.thread.description}
+>
+  <FragmentStream
+    fragments={fragments}
+    title={pages.thread.title}
+    intro={pages.thread.intro}
+  />
+</BaseLayout>

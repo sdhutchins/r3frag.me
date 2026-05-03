@@ -20,6 +20,7 @@ body:
       options:
         - science
         - art
+        - thread
     validations:
       required: true
 
