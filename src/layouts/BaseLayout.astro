@@ -7,10 +7,18 @@ const {
   description = siteData.siteDefaults.description,
 } = Astro.props;
 
-const pathname = Astro.url.pathname;
+const normalizePath = (path) => {
+  if (path === '/') {
+    return path;
+  }
+
+  return path.replace(/\/$/, '');
+};
+
+const pathname = normalizePath(Astro.url.pathname);
 const [brandLink, ...navLinks] = siteData.navigation;
 
-const activeNavLink = navLinks.find((link) => pathname === link.href);
+const activeNavLink = navLinks.find((link) => pathname === normalizePath(link.href));
 
 const brandLabel = activeNavLink
   ? `${brandLink.label} / ${activeNavLink.label.toLowerCase()}`
@@ -34,9 +42,9 @@ const brandLabel = activeNavLink
             class:list={[
               'site-nav__link',
               'site-nav__brand',
-              pathname === brandLink.href && 'is-active',
+              pathname === normalizePath(brandLink.href) && 'is-active',
             ]}
-            aria-current={pathname === brandLink.href ? 'page' : undefined}
+            aria-current={pathname === normalizePath(brandLink.href) ? 'page' : undefined}
           >
             {brandLabel}
           </a>
@@ -45,8 +53,8 @@ const brandLabel = activeNavLink
             {navLinks.map((link) => (
               <a
                 href={link.href}
-                class:list={['site-nav__link', pathname === link.href && 'is-active']}
-                aria-current={pathname === link.href ? 'page' : undefined}
+                class:list={['site-nav__link', pathname === normalizePath(link.href) && 'is-active']}
+                aria-current={pathname === normalizePath(link.href) ? 'page' : undefined}
               >
                 {link.label}
               </a>
