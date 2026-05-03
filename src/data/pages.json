@@ -1,8 +1,8 @@
 {
   "index": {
     "title": "r3frag.me",
-    "description": "r3frag.me is a static archive of fragments. An ongoing refragmenting of a life expressed through science and art.",
-    "byline": "r3frag.me is a static archive of fragments.\nAn ongoing refragmenting of a life expressed through science and art."
+    "description": "r3frag.me is a static archive of fragments. An ongoing refragmenting of a life expressed through science, art, and thread.",
+    "byline": "r3frag.me is a static archive of fragments.\nAn ongoing refragmenting of a life expressed through science, art, and thread."
   },
   "science": {
     "title": "Science",
@@ -13,6 +13,11 @@
     "title": "Art",
     "description": "Art fragments from the r3frag.me archive.",
     "intro": "Images and brief captions kept in the same chronological language as the archive."
+  },
+  "thread": {
+    "title": "Thread",
+    "description": "Thread fragments from the r3frag.me archive.",
+    "intro": "Short fragments for recurrence, relationship, and the quiet logic between things."
   },
   "about": {
     "title": "About",

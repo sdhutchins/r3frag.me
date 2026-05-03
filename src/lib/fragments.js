@@ -63,6 +63,10 @@ function validateBody(filePath, frontmatter, rawBody) {
     throw new Error(`[fragments] ${filePath} exceeds the science limit of 6 sentences.`);
   }
 
+  if (frontmatter.mode === 'thread' && sentenceCount > 5) {
+    throw new Error(`[fragments] ${filePath} exceeds the thread limit of 5 sentences.`);
+  }
+
   if (frontmatter.mode === 'art') {
     if (sentenceCount > 3) {
       throw new Error(`[fragments] ${filePath} exceeds the art limit of 3 sentences.`);
