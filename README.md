@@ -2,7 +2,7 @@
 
 r3frag is a static archive of fragments.
 
-It is built with Astro as a minimal, content-driven site for short scientific and artistic thoughts arranged in a single chronological stream.
+It is built with Astro as a minimal, content-driven site for short scientific, artistic, and threaded thoughts arranged in a single chronological stream.
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@ It is built with Astro as a minimal, content-driven site for short scientific an
 
 - Node.js
 - npm
-- Astro 6 (installed through local dependencies)0
+- Astro 6 (installed through local dependencies)
 
 ### Instructions
 
@@ -49,9 +49,10 @@ imageAlt: optional image description
 
 Fragment notes:
 
-- Valid `mode` values are `science` and `art`.
+- Valid `mode` values are `science`, `art`, and `thread`.
 - `science` fragments should stay concise and conditional.
 - `art` fragments can be image-only or brief text.
+- `thread` fragments should stay brief and trace recurrence, relationship, or connection.
 - If `image` is used, place the asset in `src/assets/fragments/`.
 
 Site copy and metadata live in:

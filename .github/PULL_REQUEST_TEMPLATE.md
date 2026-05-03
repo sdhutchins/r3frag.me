@@ -12,6 +12,7 @@
 - [ ] Fragment frontmatter remains valid.
 - [ ] Science fragments remain 6 sentences or fewer.
 - [ ] Art fragments remain image-only or 3 sentences or fewer.
+- [ ] Thread fragments remain 5 sentences or fewer.
 
 ## Design or Behavior Impact
 
