@@ -16,9 +16,11 @@ const normalizePath = (path) => {
 };
 
 const pathname = normalizePath(Astro.url.pathname);
-const [brandLink, ...navLinks] = siteData.navigation;
+const [brandLink, ...siteLinks] = siteData.navigation;
+const aboutLink = siteLinks.find((link) => link.href === '/about');
+const navLinks = siteLinks.filter((link) => link.href !== '/about');
 
-const activeNavLink = navLinks.find((link) => pathname === normalizePath(link.href));
+const activeNavLink = siteLinks.find((link) => pathname === normalizePath(link.href));
 
 const brandLabel = activeNavLink
   ? `${brandLink.label} / ${activeNavLink.label.toLowerCase()}`
@@ -67,5 +69,20 @@ const brandLabel = activeNavLink
     <main class="site-main">
       <slot />
     </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        {aboutLink && (
+          <a
+            href={aboutLink.href}
+            class:list={['site-footer__link', pathname === normalizePath(aboutLink.href) && 'is-active']}
+            aria-current={pathname === normalizePath(aboutLink.href) ? 'page' : undefined}
+          >
+            {aboutLink.label}
+          </a>
+        )}
+        <p class="site-footer__copyright">&copy; 2026 SDH</p>
+      </div>
+    </footer>
   </body>
 </html>

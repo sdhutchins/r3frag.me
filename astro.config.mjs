@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 function lazyImagePlugin() {
   return function addLazyLoading(tree) {
@@ -25,6 +26,7 @@ function walkTree(node) {
 export default defineConfig({
   site: 'https://r3frag.me',
   output: 'static',
+  integrations: [sitemap()],
   markdown: {
     rehypePlugins: [lazyImagePlugin],
   },
